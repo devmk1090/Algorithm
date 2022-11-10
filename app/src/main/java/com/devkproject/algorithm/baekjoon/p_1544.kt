@@ -1,5 +1,8 @@
 package com.devkproject.algorithm.baekjoon
 
+/**
+ * 브루트 포스(완전탐색 알고리즘)
+ */
 fun main() {
     val mSet = mutableSetOf<String>() //집합처럼 중복되지 않는 고유한 원소만을 가짐
     val n = readLine()!!.toInt()

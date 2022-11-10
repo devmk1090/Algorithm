@@ -2,6 +2,9 @@ package com.devkproject.algorithm.baekjoon
 
 import kotlin.math.sqrt
 
+/**
+ * 브루트 포스(완전탐색 알고리즘)
+ */
 fun main() {
     val m = readLine()!!.toInt()
     val n = readLine()!!.toInt()
