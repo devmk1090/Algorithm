@@ -1,4 +1,4 @@
-package com.devkproject.algorithm.baekjoon
+package com.devkproject.algorithm.dp
 
 /**
  * Dynamic Programming(동적 프로그래밍)

@@ -1,4 +1,6 @@
-package com.devkproject.algorithm.baekjoon
+package com.devkproject.algorithm.dp
+
+import java.util.*
 
 /**
  * Dynamic Programming(동적 프로그래밍)
@@ -6,8 +8,11 @@ package com.devkproject.algorithm.baekjoon
  */
 
 fun main() {
-    val n = readLine()!!.toInt()
-    val k = readLine()!!.toInt()
+    val br = System.`in`.bufferedReader()
+    val st = StringTokenizer(br.readLine())
+
+    val n = st.nextToken().toInt()
+    val k = st.nextToken().toInt()
 
     println(pascal(n, k))
 }
