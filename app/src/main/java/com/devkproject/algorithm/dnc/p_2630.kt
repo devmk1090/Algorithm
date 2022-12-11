@@ -23,9 +23,9 @@ fun main() {
         board[idx] = readLine()!!.split(" ").map { it.toInt() }.toIntArray()
     }
 
-//    for (row in board) {
-//        println(row.contentToString())
-//    }
+    for (row in board) {
+        println(row.contentToString())
+    }
 
     partition(0, 0, n)
 

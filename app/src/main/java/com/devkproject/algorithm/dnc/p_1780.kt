@@ -5,17 +5,14 @@ package com.devkproject.algorithm.dnc
  * https://www.acmicpc.net/problem/1780 (종이의 개수)
  */
 
-var n = 0
 var pGray = 0
 var pWhite = 0
 var pBlack = 0
-var check: Array<BooleanArray> = arrayOf()
 var paper: Array<IntArray> = arrayOf()
 
 fun main () {
     val n = readLine()!!.toInt()
     paper = Array(n) { IntArray(n) }
-    check = Array(n) { BooleanArray(n) }
 
     repeat(n) { idx ->
         paper[idx] = readLine()!!.split(" ").map { it.toInt() }.toIntArray()
