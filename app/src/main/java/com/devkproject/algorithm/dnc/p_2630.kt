@@ -2,7 +2,7 @@ package com.devkproject.algorithm.dnc
 
 /**
  * Divide and Conquer(분할 정복)
- * https://www.acmicpc.net/problem/1780 (종이의 개수)
+ * https://www.acmicpc.net/problem/2630 (색종이 만들기)
  *
  * 주어진 문제를 둘 이상의 부분 문제로 나눈 뒤 각 문제에 대한 답을 계산하고, 각 부분 문제의
  * 답으로부터 전체 문제의 답을 계산해내는 것
