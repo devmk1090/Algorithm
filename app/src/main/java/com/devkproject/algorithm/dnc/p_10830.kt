@@ -5,65 +5,56 @@ package com.devkproject.algorithm.dnc
  * https://www.acmicpc.net/problem/10830 (행렬 제곱)
  */
 
-var matrix: Array<IntArray> = arrayOf()
-var N = 0
-val MOD = 1000
-
 fun main() {
+    val mod = 1000
+    val line = readln().split(" ").filter { it.isNotBlank() }
+    val rowColumnCount = line.first().toInt()
+    val multiplier = line.last().toLong()
+    val matrix = readMatrix(rowColumnCount, rowColumnCount)
 
-    val (N, b) = readLine()!!.split(" ").map(String::toInt)
-    val c = b.toLong()
-    matrix = Array(N) { IntArray(N) }
+    val result = getPowerMatrixModP(matrix, multiplier, mod)
 
-    repeat(N) { idx ->
-        matrix[idx] = readLine()!!.split(" ").map { it.toInt() % MOD }.toIntArray()
-
-    }
-
-    for (row in matrix) {
-        println(row.contentToString())
-    }
-
-    val result = pow(matrix, c)
-
-    val sb = StringBuilder()
-    for (i in 0 until N) {
-        for (j in 0 until N) {
-            sb.append(result[i][j]).append(' ')
-        }
-        sb.append('\n')
-    }
-    println(sb)
+    result.printMatrix()
 }
 
-//행렬 제곱 분할정복 메서드
-private fun pow(a: Array<IntArray> ,b: Long): Array<IntArray> {
-    if (b == 1L) {
-        return a
-    }
-    //지수를 절반으로 분할하여 재귀호출
-    var ret: Array<IntArray> = pow(a, b / 2)
-
-    ret = multiply(ret, ret)
-
-    //만약 지수가 홀수라면 마지막에 A^1 을 곱해준다
-    if (b % 2 == 1L) {
-        ret = multiply(ret, matrix)
-    }
-    return ret
-}
-
-//a, b 행렬을 곱함
-private fun multiply(a: Array<IntArray>, b: Array<IntArray>): Array<IntArray> {
-    val ret = Array(N) { IntArray(N) }
-
-    for (i in 0 until N) {
-        for (j in 0 until N) {
-            for (k in 0 until N) {
-                ret[i][j] += a[i][k] * b[k][j]
-                ret[i][j] %= MOD
-            }
+private fun readMatrix(rowCount:Int, columnCount:Int): Array<IntArray> {
+    val matrix1 = Array(rowCount) { IntArray(columnCount) }
+    for (m in matrix1) {
+        val inputRow = readln().split(" ").map { it.toInt() }
+        for (i in m.indices) {
+            m[i] = inputRow[i]
         }
     }
-    return ret
+    return matrix1
+}
+
+fun getPowerMatrixModP(matrix: Array<IntArray>, multiplier: Long, mod: Int): Array<IntArray> = when {
+    multiplier == 1L -> matrix % mod
+    multiplier.isOdd() -> {
+        val half = getPowerMatrixModP(matrix, multiplier / 2, mod)
+        half * half % mod
+    }
+    else -> getPowerMatrixModP(matrix, multiplier-1, mod) * matrix % mod
+}
+
+operator fun Array<IntArray>.rem(other: Int): Array<IntArray> {
+    return Array(this.size) { y -> IntArray(this[y].size) { x -> this[y][x] % other  }}
+}
+
+operator fun Array<IntArray>.times(other: Array<IntArray>): Array<IntArray> {
+    return Array(this.size){ y -> IntArray(other.first().size) { x -> this[y] * other.map { it[x] }.toIntArray() } }
+}
+
+operator fun IntArray.times(other: IntArray): Int {
+    return this.mapIndexed { i, it -> other[i] * it }.toIntArray().sum()
+}
+
+private fun Long.isOdd(): Boolean {
+    return this % 2 == 0L
+}
+
+fun Array<IntArray>.printMatrix() {
+    this.forEach { row -> row.forEach { column -> print("$column ") }
+        println()
+    }
 }
