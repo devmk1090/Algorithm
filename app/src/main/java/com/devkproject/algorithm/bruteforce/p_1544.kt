@@ -1,4 +1,4 @@
-package com.devkproject.algorithm.baekjoon
+package com.devkproject.algorithm.bruteforce
 
 /**
  * 브루트 포스(완전탐색 알고리즘)

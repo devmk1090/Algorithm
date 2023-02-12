@@ -1,4 +1,4 @@
-package com.devkproject.algorithm.baekjoon
+package com.devkproject.algorithm.greedy
 
 /**
  * 그리디 알고리즘 OR 욕심쟁이 알고리즘

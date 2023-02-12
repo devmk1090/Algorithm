@@ -1,4 +1,4 @@
-package com.devkproject.algorithm.baekjoon
+package com.devkproject.algorithm.bruteforce
 
 import java.util.*
 
