@@ -1,7 +1,5 @@
 package com.devkproject.algorithm.dp
 
-import java.lang.Math.min
-
 /**
  * Dynamic Programming(동적 프로그래밍)
  * https://www.acmicpc.net/problem/2839 (1로 만들기)
