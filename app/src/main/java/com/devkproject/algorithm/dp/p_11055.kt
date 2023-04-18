@@ -7,6 +7,7 @@ import kotlin.math.max
  * https://www.acmicpc.net/problem/11055 (가장 큰 증가하는 부분 수열)
  */
 
+//n이 1000까지였기 때문에 O(N^2)의 시간 복잡도 통과
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
     val list = readLine().split(" ").map { it.toInt() }

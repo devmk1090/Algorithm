@@ -5,7 +5,7 @@ import kotlin.math.max
 
 /**
  * Dynamic Programming(동적 프로그래밍)
- * https://www.acmicpc.net/problem/11053
+ * https://www.acmicpc.net/problem/11053 (가장 긴 증가하는 부분 수열)
  */
 
 // arr[i] > arr[j]보다 크다면 dp[i]의 값을 증가
