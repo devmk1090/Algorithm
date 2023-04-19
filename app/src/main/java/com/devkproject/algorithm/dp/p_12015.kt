@@ -10,8 +10,8 @@ package com.devkproject.algorithm.dp
 //무슨 원소가 들어오느냐보다 '길이'를 구하는 것을 생각하자
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().toInt()
-    val arr = readLine().split(" ").map { it.toInt() }
-    val dp = mutableListOf(Int.MIN_VALUE)
+    val arr = IntArray(n).run { readLine().split(" ").map { it.toInt() } }
+    val dp = mutableListOf(n)
 
     for (item in arr) {
         if (dp.last() < item) dp.add(item) //현재 탐색 값(arr)이 dp의 last 값보다 크다면 dp에 원소 추가
