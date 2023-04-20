@@ -6,14 +6,12 @@ package com.devkproject.algorithm.lv_0
  * 옹알이
  */
 
-class Solution {
-    fun solution(babbling: Array<String>): Int {
-        var answer: Int = 0
-        answer = babbling.count { item ->
-            item.isNotEmpty() && item.split("aya", "ye", "woo", "ma").none {
-                it.isNotEmpty()
-            }
+fun solution(babbling: Array<String>): Int {
+    var answer: Int = 0
+    answer = babbling.count { item ->
+        item.isNotEmpty() && item.split("aya", "ye", "woo", "ma").none {
+            it.isNotEmpty()
         }
-        return answer
     }
+    return answer
 }
