@@ -7,10 +7,10 @@ package com.devkproject.algorithm.lv_0
  */
 
 fun main() {
-    solution(4, 14)
+    p120923(4, 14)
 }
 
-fun solution(num: Int, total: Int): List<Int> {
+fun p120923(num: Int, total: Int): List<Int> {
     val answer = mutableListOf<Int>()
     var data = total / num
 

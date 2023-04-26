@@ -11,10 +11,10 @@ package com.devkproject.algorithm.lv_0
 //최소공배수 : 입력받은 두 수(a, b)의 곱에서 최대공약수를 나눈다
 
 fun main() {
-    solution(2, 1, 4, 3)
+    p120808(2, 1, 4, 3)
 }
 
-fun solution(denum1: Int, num1: Int, denum2: Int, num2: Int): IntArray {
+fun p120808(denum1: Int, num1: Int, denum2: Int, num2: Int): IntArray {
     val gcd = gcd(num1, num2)
     val lcm = lcm(num1, num2, gcd)
 

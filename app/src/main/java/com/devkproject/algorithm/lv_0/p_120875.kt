@@ -7,7 +7,7 @@ package com.devkproject.algorithm.lv_0
  */
 
 //기울기 y2-y1 / x2-x1
-class P120875 {
+class p120875 {
     fun solution(dots: Array<IntArray>): Int {
         var answer = 0
         val arr = ArrayList<Double>()

@@ -6,7 +6,7 @@ package com.devkproject.algorithm.lv_0
  * 옹알이
  */
 
-class P120956 {
+class p120956 {
     fun solution(babbling: Array<String>): Int {
         var answer: Int = 0
         answer = babbling.count { item ->

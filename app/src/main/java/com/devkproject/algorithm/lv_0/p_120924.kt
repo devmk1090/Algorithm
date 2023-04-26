@@ -6,7 +6,7 @@ package com.devkproject.algorithm.lv_0
  * 다음에 올 숫자
  */
 
-fun solution(common: IntArray): Int {
+fun p120924(common: IntArray): Int {
     var answer: Int = 0
 
     val diff = common[1] - common[0]

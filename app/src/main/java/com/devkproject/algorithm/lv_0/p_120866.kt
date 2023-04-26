@@ -6,7 +6,7 @@ package com.devkproject.algorithm.lv_0
  * 안전지대
  */
 
-class P120866 {
+class p120866 {
     fun solution(board: Array<IntArray>): Int {
         var answer: Int = 0
 

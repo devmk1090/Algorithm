@@ -11,12 +11,12 @@ package com.devkproject.algorithm.lv_0
 
 fun main() {
     val list: Array<String> = arrayOf("19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2")
-    solution(list).map {
+    p120907(list).map {
         print(it)
     }
 }
 
-fun solution(quiz: Array<String>): Array<String?> {
+fun p120907(quiz: Array<String>): Array<String?> {
     val answer = arrayOfNulls<String>(quiz.size)
     for (i in quiz.indices) {
         val arr = quiz[i].split(" ".toRegex()).toTypedArray()
