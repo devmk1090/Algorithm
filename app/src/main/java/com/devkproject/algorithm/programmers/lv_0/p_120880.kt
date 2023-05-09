@@ -1,4 +1,4 @@
-package com.devkproject.algorithm.lv_0
+package com.devkproject.algorithm.programmers.lv_0
 
 import kotlin.math.abs
 

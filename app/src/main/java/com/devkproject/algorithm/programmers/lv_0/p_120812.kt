@@ -1,4 +1,4 @@
-package com.devkproject.algorithm.lv_0
+package com.devkproject.algorithm.programmers.lv_0
 
 /**
  * Programmers Lv.0
@@ -6,9 +6,6 @@ package com.devkproject.algorithm.lv_0
  * 최빈값 구하기
  */
 
-fun main() {
-
-}
 fun p120812(array: IntArray): Int {
     var answer = 0
     val countArray = IntArray(1001)

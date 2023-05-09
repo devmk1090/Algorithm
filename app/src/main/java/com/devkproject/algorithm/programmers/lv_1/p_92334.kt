@@ -1,7 +1,13 @@
-package com.devkproject.algorithm.lv_0
+package com.devkproject.algorithm.programmers.lv_1
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+
+/**
+ * Programmers Lv.1
+ * https://school.programmers.co.kr/learn/courses/30/lessons/92334
+ * 신고 결과 받기
+ */
 
 @RequiresApi(Build.VERSION_CODES.N)
 fun main() {
