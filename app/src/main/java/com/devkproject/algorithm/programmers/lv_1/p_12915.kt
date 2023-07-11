@@ -6,7 +6,7 @@ package com.devkproject.algorithm.programmers.lv_1
  * 문자열 내 마음대로 정렬하기
  */
 
-fun solution(strings: Array<String>, n: Int): Array<String> {
+fun p12915(strings: Array<String>, n: Int): Array<String> {
     return strings.sortedWith(compareBy( { it[n]}, { it })).toTypedArray()
 }
 
