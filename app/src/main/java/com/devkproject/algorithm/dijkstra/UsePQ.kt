@@ -26,6 +26,39 @@ fun dijkstra(graph: Array<ArrayList<Edge>>, start: Int): IntArray {
     pq.offer(Pair(start, 0)) //우선순위 큐에 요소 추가
 
     while (pq.isNotEmpty()) {
+        val (currentNode, currentDistance) = pq.poll()
 
+        if (currentDistance > distances[currentNode]) continue //이미 처리된 노드 스킵
+
+        for (edge in graph[currentNode]) { //현재 노드와 연결된 다른 노드 확인
+            val newDistance = currentDistance + edge.weight
+
+            //더 짧은 경로를 발견하면 갱신
+            if (newDistance < distances[edge.destination]) {
+                distances[edge.destination] = newDistance
+                pq.offer(Pair(edge.destination, newDistance))
+            }
+        }
+    }
+    return distances
+}
+
+fun main() {
+    val graph = Array(5) { ArrayList<Edge>() }
+    graph[0].add(Edge(1, 10))
+    graph[0].add(Edge(2, 5))
+    graph[1].add(Edge(2, 1))
+    graph[1].add(Edge(3, 2))
+    graph[2].add(Edge(3, 9))
+    graph[2].add(Edge(4, 2))
+    graph[3].add(Edge(4, 4))
+    graph[4].add(Edge(0, 7))
+    graph[4].add(Edge(3, 6))
+
+    val startNode = 0
+    val distances = dijkstra(graph, startNode)
+
+    for (i in distances.indices) {
+        println("${startNode}에서 ${i}까지의 최단 거리는: ${distances[i]}")
     }
 }
