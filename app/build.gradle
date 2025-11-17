@@ -4,12 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    namespace "com.devkproject.algorithm"
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.devkproject.algorithm"
         minSdk 24
-        targetSdk 32
+        targetSdk 36
         versionCode 1
         versionName "1.0"
 
